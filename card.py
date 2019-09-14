@@ -13,7 +13,8 @@ class Card:
         print(self.__str__())
 
     def __str__(self):
-
+        # Replace values with ranks
+        # Correctly places the values into face cards or 2-10
         if self.val == 1:
             rank = "Ace"
         elif self.val == 11:

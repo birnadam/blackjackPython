@@ -32,13 +32,13 @@ class Game:
         print("Your hand: {} {}   Dealer's hand: {} {}".format(self.player.show_hand(
         ), self.player.calc_hand(), self.bot.show_hand(), self.bot.calc_hand()))
 
-    def prepare_round(self):
-        if len(self.deck.cards) <= 20:
+    def prepare_round(self): # Shuffles the deck when there's only 13 cards left
+        if len(self.deck.cards) <= 13:
 
             self.bot_busted = False
             self.player_busted = False
 
-            print("The deck only has 20 cards left and was shuffled")
+            print("The deck only has 13 cards left and was shuffled")
             self.deck.shuffle()
             print()
 
@@ -63,7 +63,7 @@ class Game:
             t.sleep(delay)
             print()
 
-    def take_bet(self, player: Player):
+    def take_bet(self, player: Player): # Takes in the user's bet
         print("Your chips: {}$".format(player.chips))
         bet = input("Please place your bet: ")
         print()
