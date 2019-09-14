@@ -1,4 +1,5 @@
 from deck import Deck
+from not_enough_chips_exception import NotEnoughChipsError
 
 
 class Player:
@@ -14,7 +15,7 @@ class Player:
         pass
 
     def draw_card(self, deck: Deck):
-        print("{} draws a card".format(self.name))
+        print("{} draw(s) a card".format(self.name))
         card = deck.cards.pop()
         self.hand.append(card)
 
@@ -59,3 +60,9 @@ class Player:
                 sum += 10
 
         return sum
+
+    def place_bet(self, bet: int):
+        if self.chips < bet:
+            raise NotEnoughChipsError
+
+        self.chips = self.chips - bet

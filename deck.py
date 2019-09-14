@@ -1,4 +1,4 @@
-from card import Card
+from card import Card # Uses the Card class to fill the Deck
 
 
 class Deck:
@@ -13,7 +13,7 @@ class Deck:
 
     def shuffle(self):
         import random as r
-
+        # Loops through and creates 13 cards of each suit 
         for suit in ["Hearts", "Clubs", "Spades", "Diamonds"]:
             for val in range(1, 14):
                 card = Card(val, suit)

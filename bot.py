@@ -1,7 +1,7 @@
 from player import Player # Uses Player as foundation
 
 
-class bot(Player):
+class Bot(Player):
 
     def calc_hand_hidden(self): # To show user potential total of dealer
         sum = 0
